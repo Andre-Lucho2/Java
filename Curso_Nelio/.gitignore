@@ -1,0 +1,11 @@
+#IDEs
+.vscode/
+!.vscode/extensions.json
+.idea/
+
+# Compilados
+dist/
+build/
+out/
+bin/
+obj/
