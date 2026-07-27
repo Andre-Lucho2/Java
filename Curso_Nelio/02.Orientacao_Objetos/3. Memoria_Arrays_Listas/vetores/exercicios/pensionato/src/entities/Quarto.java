@@ -46,8 +46,12 @@ public class Quarto {
         this.alugado = alugado;
     }
 
-    public Estudante getEstudante() {
-        return estudante;
+    public String getEstudante() {
+        if (estudante != null) {
+            return estudante.toString();
+        } else {
+            return "não consta";
+        }
     }
 
     public void setEstudante(Estudante estudante) {
@@ -56,7 +60,7 @@ public class Quarto {
 
     @Override
     public String toString() {
-        return String.format("Quarto: %s, status: %s, Estudante: %s", numero, alugado, estudante);
+        return String.format("Quarto: #%d: %s, Estudante: %s", (numero + 1), this.isAlugado(), this.getEstudante());
     }
 
 }
