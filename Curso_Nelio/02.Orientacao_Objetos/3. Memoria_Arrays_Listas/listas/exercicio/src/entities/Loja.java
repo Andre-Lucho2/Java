@@ -1,6 +1,7 @@
 package entities;
 
 import java.util.Scanner;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Loja {
@@ -8,8 +9,12 @@ public class Loja {
 
     private List<Funcionario> listaFunc;
 
-    public Loja(List<Funcionario> listaFunc) {
-        this.listaFunc = listaFunc;
+    public Loja() {
+        this.listaFunc = new ArrayList<>();
+    }
+
+    public List<Funcionario> getListFunc() {
+        return listaFunc;
     }
 
     public Funcionario cadastrarFuncionario() {
@@ -38,7 +43,12 @@ public class Loja {
             int id = sc.nextInt();
 
             Funcionario buscaID = listaFunc.stream().filter(x -> x.getId().equals(id)).findFirst().orElse(null);
-            buscaID.setSalario();
+
+            if (buscaID != null) {
+                buscaID.setSalario();
+            } else {
+                System.out.println("Id do funcionário não encontrado");
+            }
         }
     }
 
