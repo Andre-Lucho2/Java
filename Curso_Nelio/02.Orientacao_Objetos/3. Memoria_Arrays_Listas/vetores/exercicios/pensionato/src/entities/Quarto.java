@@ -8,17 +8,6 @@ public class Quarto {
     public Quarto() {
     };
 
-    public Quarto(int numero, boolean alugado, Estudante estudante) {
-        this.numero = numero;
-        this.alugado = alugado;
-        this.estudante = estudante;
-    }
-
-    public Quarto(int numero, boolean alugado) {
-        this.numero = numero;
-        this.alugado = alugado;
-    }
-
     public Quarto(int numero) {
         this.numero = numero;
         this.alugado = false;
