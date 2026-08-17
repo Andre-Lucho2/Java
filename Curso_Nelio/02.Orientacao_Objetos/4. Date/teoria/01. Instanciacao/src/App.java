@@ -39,8 +39,6 @@ public class App {
         // System.out.println(date09);
         // System.out.println(date10);
 
-        // Duration
-
     }
 }
 

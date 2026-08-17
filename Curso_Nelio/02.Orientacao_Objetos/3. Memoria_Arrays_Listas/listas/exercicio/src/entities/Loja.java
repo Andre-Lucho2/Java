@@ -7,11 +7,9 @@ import java.util.List;
 public class Loja {
     Scanner sc = new Scanner(System.in);
 
-    private List<Funcionario> listaFunc;
+    private List<Funcionario> listaFunc = new ArrayList<>();
 
-    public Loja() {
-        this.listaFunc = new ArrayList<>();
-    }
+    public Loja() {}
 
     public List<Funcionario> getListFunc() {
         return listaFunc;
