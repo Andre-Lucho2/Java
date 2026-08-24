@@ -15,7 +15,7 @@ public class App {
 
         // Tipo String -> enum
         OrderStatus osToString = OrderStatus.valueOf("DELIVERED"); 
-        // .valueOf() deve receber a String exatamente como declarado no Tipo enum
+        // .valueOf() deve receber exatamente como declarado no Tipo enum
 
         System.out.println(osToString);
     }

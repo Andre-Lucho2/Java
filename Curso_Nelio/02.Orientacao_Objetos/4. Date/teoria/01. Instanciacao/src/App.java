@@ -12,30 +12,30 @@ public class App {
         Instant date03 = Instant.now();
 
         // Formato ISO 8601
-        // LocalDate date04 = LocalDate.parse("2025-07-20");
-        // LocalDateTime date05 = LocalDateTime.parse("2025-07-20T18:00:10");
+        LocalDate date04 = LocalDate.parse("2025-07-20");
+        LocalDateTime date05 = LocalDateTime.parse("2025-07-20T18:00:10");
 
-        // // Passando hora local (Com TimeZone) - print sai como GMT-00
-        // Instant date06 = Instant.parse("2025-07-20T18:00:10-03:00");
+        // Passando hora local (Com TimeZone) - print sai como GMT-00
+        Instant date06 = Instant.parse("2025-07-20T18:00:10-03:00");
 
-        // // Retornando uma data(em ISO) passando uma data em formato personalizado:
-        // // Objeto DateTimeFormatter
+        // Retornando uma data(em ISO) passando uma data em formato personalizado:
+        // Objeto DateTimeFormatter
         DateTimeFormatter fmt01 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        // DateTimeFormatter fmt02 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        DateTimeFormatter fmt02 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         LocalDate date07 = LocalDate.parse("20/07/2025", fmt01);
-        // LocalDateTime date08 = LocalDateTime.parse("20/07/2025 22:20", fmt02);
+        LocalDateTime date08 = LocalDateTime.parse("20/07/2025 22:20", fmt02);
 
         LocalDate date09 = LocalDate.of(2026, 8, 07);
-        // LocalDateTime date10 = LocalDateTime.of(2026, 8, 07, 9, 31, 33, 10001);
+        LocalDateTime date10 = LocalDateTime.of(2026, 8, 07, 9, 31, 33, 10001);
 
         // System.out.println(date01);
-        System.out.println(date02);
+        // System.out.println(date02);
         // System.out.println(date03);
         // System.out.println(date04);
         // System.out.println(date05);
         // System.out.println(date06);
         // System.out.println(date07);
-        // System.out.println(date08);
+        System.out.println(date08);
         // System.out.println(date09);
         // System.out.println(date10);
 

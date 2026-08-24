@@ -2,6 +2,7 @@ package entities;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import entities.enums.WorkLevel;
 
 public class Worker {
@@ -11,8 +12,7 @@ public class Worker {
     private Department department;
     private List<HourContrat> contracts = new ArrayList<>();
 
-    public Worker() {
-    }
+    public Worker(){}
 
     public Worker(String name, WorkLevel level, Double baseSalary, Department department) {
         this.name = name;
@@ -45,39 +45,24 @@ public class Worker {
         this.baseSalary = baseSalary;
     }
 
-    public Department getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(Department department) {
-        this.department = department;
-    }
-
-
-    public List<HourContrat> getContrats() {
-        return contracts;
-    }
-
-    public void addContract(HourContrat contract) {
+    public void addContract(HourContrat contract){
         contracts.add(contract);
     }
 
-    public void removeContract(HourContrat contract) {
+    public void removeContract(HourContrat contract){
         contracts.remove(contract);
     }
 
-    public double income(int month, int year) {
+    public double income(int year, int month){
         double sum = baseSalary;
 
         for (HourContrat contract : contracts) {
-            if (contract.getDate().getMonthValue() == month && contract.getDate().getYear() == year) {
-                sum += contract.totalValue();
-            }
+            if(contract.equals(contract))
         }
-        return sum;
 
     }
 
-    // @Override
 
+    // @Override
+    
 }
