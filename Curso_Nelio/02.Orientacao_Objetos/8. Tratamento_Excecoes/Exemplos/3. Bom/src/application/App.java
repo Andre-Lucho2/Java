@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import model.entities.Reservation;
+import model.exceptions.DomainException;
 
 public class App {
     private static final SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
@@ -36,13 +37,11 @@ public class App {
 
         } catch (ParseException e) {
             System.out.println("Invalid date format!");
-        } catch (IllegalArgumentException e) {
-            System.out.println("Error: " + e.getMessage());
+        } catch (DomainException e) {
+            System.out.println("Error: " + e.getMessage()); // tratamento de exceção personalizada
+        } catch (RuntimeException e) {
+            System.out.println("Unexpected error"); // tratam. de exceção de Runtime
         }
         sc.close();
     }
 }
-
-// if (!checkOut.after(checkIn)) {
-// System.out.println("Error in reservation: Check-out date must be after
-// check-in date");
