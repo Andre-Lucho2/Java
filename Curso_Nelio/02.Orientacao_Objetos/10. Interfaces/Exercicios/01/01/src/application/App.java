@@ -1,9 +1,13 @@
 package application;
 
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
 import model.entities.Contract;
+import model.entities.Installment;
+import model.services.ContractService;
+import model.services.PaypalService;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -18,7 +22,7 @@ public class App {
         System.out.print("Número do contrato:");
         int number = sc.nextInt();
         System.out.print("Data do contrato (dd/MM/yyyy)");
-        LocalDate date = LocalDate.parse(sc.nextLine(), fmt);
+        LocalDate date = LocalDate.parse(sc.next(), fmt);
         System.out.print("Valor do contrato:");
         double totalValue = sc.nextDouble();
 
@@ -27,8 +31,14 @@ public class App {
         System.out.print("Entre com o número de parcelas para pagamento do contrato:");
         int installments = sc.nextInt();
 
-        // Print --> parcelas
-        // data da proxima parcela - valor total(juros + taxa)
+        ContractService contract01 = new ContractService(new PaypalService());
+
+        contract01.processContract(contract, installments);
+
+        System.out.println("Parcelas: ");
+        for (Installment inst : contract.getInstallments()) {
+            System.out.println(inst.getDueDate().format(fmt) + " - " + String.format("%.2f", inst.getAmount()));
+        }
 
         sc.close();
     }
