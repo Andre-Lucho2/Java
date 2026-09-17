@@ -13,6 +13,7 @@ public class UsaInterestService implements InterestService {
         return interestRate;
     }
 
-    // Com o Default, não há mais necessidade de implementar o método da Interface
+    // Com o Default, não há mais necessidade de implementar o método default da
+    // Interface
 
 }

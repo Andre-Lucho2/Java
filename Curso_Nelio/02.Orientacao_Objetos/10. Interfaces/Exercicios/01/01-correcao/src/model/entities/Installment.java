@@ -30,10 +30,6 @@ public class Installment {
         return amount;
     }
 
-    public void setAmount(Double amount) {
-        this.amount = amount;
-    }
-
     @Override
     public String toString() {
         return String.format("%s - %.2f", this.dueDate.format(fmt), this.amount);

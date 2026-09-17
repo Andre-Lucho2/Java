@@ -19,6 +19,9 @@ public class RentalService {
      * 
      * Se a class concreta mudar, a class RentalService não precisa de manutenção
      * 
+     * --> Posso criar nova regra de negócio com diferentes taxas para serem
+     * aplicadas, escalando o App
+     * 
      */
 
     public RentalService(Double pricePerDay, Double pricePerHour, TaxService taxService) {

@@ -33,10 +33,21 @@ public class App {
         Double pricePerDay = sc.nextDouble();
 
         RentalService rentalService = new RentalService(pricePerDay, pricePerHour, new BrazilTaxService());
-        // Aqui, a classe App é que instancia a dependêcia concreta do 'services'
-        // BrazilTaxService() implementa a interface TaxService
-        // BrazilTaxService --> Upcasting de TaxService --> Estamos fazendo injeção de
-        // dependência por meio de constructor(RentalService)
+        /*
+         * Aqui, a classe App é que instancia a dependêcia concreta do 'services'
+         * BrazilTaxService() implementa a interface TaxService
+         * BrazilTaxService --> Upcasting de TaxService --> Estamos fazendo injeção de
+         * dependência por meio de constructor(RentalService)
+         * 
+         * 
+         * É uma forma de realizar a Inversão de controle:
+         * um componente externo instancia a dependência, que é então injetada no objeto
+         * "pai".
+         * Pode ser implementada de várias formas:
+         * • Construtor
+         * • Classe de instanciação (builder / factory)
+         * • Container / framework
+         */
 
         rentalService.processInvoice(rental01);
 

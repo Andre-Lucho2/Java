@@ -3,6 +3,7 @@ package model.services;
 import java.security.InvalidParameterException;
 
 public interface InterestService {
+
     double getInterestRate();
 
     default double payment(double amount, int months) {

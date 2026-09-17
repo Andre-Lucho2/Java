@@ -2,6 +2,7 @@ package model.entities;
 
 import model.enums.Color;
 
+// classe concreta
 public class Rectangle extends AbstractShape {
 
     private Double width;
