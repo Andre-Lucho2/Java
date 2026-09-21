@@ -15,7 +15,7 @@ public class Program {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
 
-        List<Product> list = new ArrayList<>();
+        List<Product> listCSV = new ArrayList<>();
 
         String path = "/mnt/65c22663-2276-4491-a595-2fb49f6b1e8c/Programacao/Aulas-teoricas/Java/Curso_Nelio/02.Orientacao_Objetos/11.Generics-Set-Map/03.Genericos_delimitados/in.txt";
 
@@ -24,14 +24,11 @@ public class Program {
 
             while (line != null) {
                 String[] fields = line.split(",");
-                String name = fields[0];
-                Double value = Double.parseDouble(fields[1]);
-
-                list.add(new Product(name, value));
+                listCSV.add(new Product(fields[0], Double.parseDouble(fields[1])));
                 line = br.readLine();
             }
 
-            Product x = CalculationService.max(list);
+            Product x = CalculationService.max(listCSV);
             System.out.println("Most expensive: " + x);
 
         } catch (IOException e) {

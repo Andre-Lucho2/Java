@@ -5,8 +5,11 @@ import java.util.List;
 
 public class PrintService {
 
-    // private List<Integer> list = new ArrayList<>();
-    private List<Object> list = new ArrayList<>(); // Sem type Safety
+    /*
+     * Object é um tipo mto genérico --> tudo em Java herda de Object -->
+     * // NÃO TENHO NENHUM TIPO DE Type Safety!
+     */
+    private List<Object> list = new ArrayList<>();
 
     public void addValue(Object value) {
         list.add(value);
@@ -21,11 +24,8 @@ public class PrintService {
 
     public void print() {
         System.out.print("[");
-        if (!list.isEmpty()) {
-            System.out.print(list.get(0));
-        }
-        for (int i = 1; i < list.size(); i++) {
-            System.out.print(", " + list.get(i));
+        for (Object item : list) {
+            System.out.print(item + ", ");
         }
         System.out.println("]");
     }

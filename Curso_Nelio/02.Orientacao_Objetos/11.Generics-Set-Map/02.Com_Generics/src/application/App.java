@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import model.services.PrintService;
 
-public class Program {
+public class App {
 
     public static void main(String[] args) {
 
@@ -15,8 +15,10 @@ public class Program {
         System.out.print("Entrar com qtos valores? ");
         int n = sc.nextInt();
 
-        // Com Type Safety --> Só permite rodar o método com o Type especificado!
-        ps.addValue(10);
+        // Já acusa erro de classe diferentes (TYPE SAFETY)--> String x Integer da
+        // instanciação do
+        // PrintService<Integer> acima
+        // ps.addValue("Maria");
 
         for (int i = 0; i < n; i++) {
             Integer value = sc.nextInt();
@@ -24,9 +26,8 @@ public class Program {
         }
 
         ps.print();
-
-        Integer x = ps.first();
-        System.out.println("First: " + x);
+        Integer x = ps.first(); // Não há necessidade do Casting aqui == TYPE SAFETY acima PrintService<Integer>
+        System.out.println("First: " + ps.first());
 
         sc.close();
     }
