@@ -10,13 +10,15 @@ public class Program {
 
         // a.
 
+        // List<Object> não é o supertipo de Integer
         List<Object> myObjs = new ArrayList<Object>();
         List<Integer> myNumbers = new ArrayList<Integer>();
         // myObjs = myNumbers; // erro de conversão
 
+        // !=
         Object obj;
         Integer inteiro = 10;
-        obj = inteiro; // ok
+        obj = inteiro; // Object é supertipo de Integer == ok
 
         // b.
 
@@ -41,6 +43,10 @@ public class Program {
         for (Object obj : list) {
             System.out.println(obj);
         }
+
+        // list.add(10); erro de compilação
+        // Como a list é do tipo curinga(?) --> O compilador não sabe qual é o tipo
+        // de list foi instanciado.
     }
 
 }

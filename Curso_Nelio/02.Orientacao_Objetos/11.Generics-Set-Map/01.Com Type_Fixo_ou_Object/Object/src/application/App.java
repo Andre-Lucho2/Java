@@ -18,7 +18,7 @@ public class App {
         // Posso add qquer tipo que quiser aqui!! SEM TYPE SAFETY
         // List tipo Object
         // Porém, no runtime tenho erro de ClassCastException --> 2 tipos de Types
-        // String + Integer na List
+        // String + Integer em List<Object>
         ps.addValue("Maria");
 
         for (int i = 0; i < n; i++) {

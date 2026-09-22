@@ -20,7 +20,7 @@ public class PrintService<T> {
 
     public void print() {
         System.out.print("[");
-        for (Object item : list) {
+        for (T item : list) {
             System.out.print(item + ", ");
         }
         System.out.println("]");

@@ -20,17 +20,42 @@ public class Program {
         listCircle.add(new Circle(4.0));
         listCircle.add(new Circle(3.0));
 
-        System.out.println("Total area= " + String.format("%.3f", totalArea(listCircle)));
+        // a)
+        // System.out.println("Total area= " + String.format("%.3f",
+        // totalArea(listCircle)));
+        // erro compilação --> List<Shape> não é um supertipo de List<Circle>
+
+        // b)
+        System.out.println("Total area= " + String.format("%.3f", totalArea2(listCircle)));
 
     }
 
-    public static double totalArea(List<? extends Shape> list) {
+    // a)
+    public static double totalArea(List<Shape> list) {
         double sum = 0.0;
         for (Shape shape : list) {
             sum += shape.area();
         }
 
         return sum;
+
+    }
+
+    // b)
+    // 1.) List<?> list --> erro --> o tipo ? pode não ser do tipo Shape
+    // 2.) <? extends Shape> --> o tipo da List pode ser Shape ou qquer subtipo de
+    // Shape
+    public static double totalArea2(List<? extends Shape> list) {
+        double sum = 0.0;
+        for (Shape shape : list) {
+            sum += shape.area();
+        }
+        // list.add(new Rectangle(1.0, 2.0)); // Como a list é do tipo curinga(?) --> O
+        // compilador não sabe qual é o tipo
+        // de list foi instanciado.
+
+        return sum;
+
     }
 
 }

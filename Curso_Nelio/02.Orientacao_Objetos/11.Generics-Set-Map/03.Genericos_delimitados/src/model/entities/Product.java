@@ -2,7 +2,14 @@ package model.entities;
 
 public class Product implements Comparable<Product> {
     private String name;
+    private String model;
     private Double price;
+
+    public Product(String name, String model, Double price) {
+        this.name = name;
+        this.model = model;
+        this.price = price;
+    }
 
     public Product(String name, Double price) {
         this.name = name;
@@ -15,6 +22,14 @@ public class Product implements Comparable<Product> {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public Double getPrice() {
@@ -31,7 +46,7 @@ public class Product implements Comparable<Product> {
     }
 
     @Override
-    public int compareTo(Product arg0) {
-        return price.compareTo(arg0.getPrice());
+    public int compareTo(Product other) {
+        return price.compareTo(other.getPrice());
     }
 }
