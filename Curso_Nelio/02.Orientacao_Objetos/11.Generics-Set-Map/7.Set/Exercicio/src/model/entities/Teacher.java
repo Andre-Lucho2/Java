@@ -1,55 +1,38 @@
 package model.entities;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Teacher {
     private String name;
-    private List<String> students;
-    private List<Character> courses;
+    private Set<Course> courses = new HashSet<>();
 
-    public Teacher() {
-    }
-
-    public Teacher(String name, List<String> students, List<Character> courses) {
+    public Teacher(String name) {
         this.name = name;
-        this.students = students;
-        this.courses = courses;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public Set<Course> getCourses() {
+        return courses;
+    }
+
+    public void addCourse(Course course) {
+        courses.add(course);
+    }
+
+    public int getTotalDistinctStudents() {
+        Set<String> allStudents = new HashSet<>();
+        for (Course course : courses) {
+            allStudents.addAll(course.getStudents());
+        }
+        return allStudents.size();
     }
 
     public int student_toHash(String name) {
         return name.hashCode();
     }
-
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + students;
-        return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Teacher other = (Teacher) obj;
-        if (student != other.student)
-            return false;
-        return true;
-    };
 
 }

@@ -1,38 +1,33 @@
 package model.entities;
 
-public class Client {
-    private String name;
-    private String email;
+import java.util.Set;
+import java.util.HashSet;
 
-    public Client(String name, String email) {
+public class Course {
+    private String name;
+    private Set<String> students = new HashSet<>();
+
+    public Course(String name) {
         this.name = name;
-        this.email = email;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public Set<String> getStudents() {
+        return students;
     }
 
-    public String getEmail() {
-        return email;
+    public void addStudent(String student) {
+        students.add(student);
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    // são da classe Object --> Override
-    // implementados com a verificação do nome e email
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((name == null) ? 0 : name.hashCode());
-        result = prime * result + ((email == null) ? 0 : email.hashCode());
         return result;
     }
 
@@ -44,16 +39,11 @@ public class Client {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Client other = (Client) obj;
+        Course other = (Course) obj;
         if (name == null) {
             if (other.name != null)
                 return false;
         } else if (!name.equals(other.name))
-            return false;
-        if (email == null) {
-            if (other.email != null)
-                return false;
-        } else if (!email.equals(other.email))
             return false;
         return true;
     }
