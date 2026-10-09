@@ -30,9 +30,4 @@ public class Teacher {
         }
         return allStudents.size();
     }
-
-    public int student_toHash(String name) {
-        return name.hashCode();
-    }
-
 }
