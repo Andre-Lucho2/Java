@@ -32,7 +32,7 @@ public class App {
         /*
          * list.sort(new MyComparator()) --> o 'obj instanciado aqui' 'MyComparator' não
          * tem um construtor!... o que list.sort() está recebendo como argumento é o
-         * resuiltado do método compare() ---> é o mesmo que passar a expresão Lambda
+         * resultado do método compare() ---> é o mesmo que passar a expresão Lambda
          * (item 4)
          * 
          * Interface funcional em Java tem mapeamento direto com as expressões lambda

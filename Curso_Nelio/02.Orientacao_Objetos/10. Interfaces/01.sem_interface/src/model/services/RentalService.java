@@ -13,7 +13,7 @@ public class RentalService {
      * Acoplamento Forte entre as classes de 'services'
      * -----------------------------------------------
      * Class RentalService --> está dependendo exclusivavemente da classe-serviço
-     * BrazilTaxService --> conhecwe a dependencia concreta (BrazilTaxService) -->
+     * BrazilTaxService --> conhece a dependencia concreta (BrazilTaxService) -->
      * está assoicada a ela!
      * ** Se trocarmos o serviço de taxas, isso gera multiplas manutenções em outras
      * classes = RentalService
