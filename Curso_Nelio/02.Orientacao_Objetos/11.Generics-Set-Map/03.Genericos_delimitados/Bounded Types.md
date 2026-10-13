@@ -48,7 +48,7 @@ método
 `public static <T extends Comparable<? super T>> T max(List<T> list) {}`
 
 `Comparable<? super T>` -->  
-"Uma comparação feita para o tipo "T" ou para qualquer superclasse (mãe, avó) de T"
+"Uma comparação feita para o tipo "T" ou para qualquer SUPERCLASSES (mãe, avó) de T ou SUBCLASSES que herdem de T"
 
 Imaginando que tenhamos implementado a class `Eletronico.java`
 
@@ -67,7 +67,7 @@ Eletronico maisCaro = CalculationService.max(listaEletronicos);
 
 Quem implementou a interface? Foi Product `Product implements Comparable<Product>`.
 
-A classe Eletronico apenas herdou a comparação que já veio da mãe `Comparable<Product>`:
+A classe Eletronico é uma subclasse de Product - herda a comparação que veio da mãe `Comparable<Product>`:
 
 - `<? super T>` pode ser a própria class `Eletronico`, ou a sua classe mãe `Product` , ou até a classe raiz `Object`.
 

@@ -52,7 +52,7 @@ public class Program {
         }
         // list.add(new Rectangle(1.0, 2.0)); // Como a list é do tipo curinga(?) --> O
         // compilador não sabe qual é o tipo
-        // de list foi instanciado.
+        // de list foi instanciado --> Covariância
 
         return sum;
 

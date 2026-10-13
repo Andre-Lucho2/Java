@@ -7,7 +7,7 @@ public class Program {
 
     public static void main(String[] args) {
 
-        // Covariância --> .get() permitida | .add() ou put --> não permitida
+        // Covariância --> .get() permitida | .add() ou .put() --> NÃO permitida
         // ------------------------------------
 
         List<Integer> intList = new ArrayList<Integer>();
@@ -22,7 +22,7 @@ public class Program {
         // subtipo de Number
 
         // ------------------------------------
-        // Contra-variância --> .get() não permitida | .add() ou put --> permitida
+        // Contra-variância --> .get() não permitida | .add() ou .put() --> permitida
         // ------------------------------------
 
         List<Object> myObjs = new ArrayList<Object>();
@@ -35,7 +35,7 @@ public class Program {
 
         Object y = myNums.get(0); // ok
 
-        // Number y1 = myNums.get(0); // erro de compilacao
+        Number y1 = myNums.get(0); // erro de compilacao
         // y1 --> pode ser Number ou um supertipo de Number --> o compilador não sabe
         // qual deles será!
 

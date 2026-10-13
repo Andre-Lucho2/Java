@@ -31,8 +31,8 @@ public class Employee implements Comparable<Employee> {
     @Override
     public int compareTo(Employee elem) {
         return name.compareTo(elem.getName());
-        // return salaty.compareTo(elem.getName());
+        // return salary.compareTo(elem.getSalary());
         // return -name.compareTo(elem.getName()); // ordem decrescente
-        // return -salaty.compareTo(elem.getName());
+        // return -salary.compareTo(elem.getSalary());
     }
 }
