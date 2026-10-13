@@ -1,4 +1,4 @@
-package model.entities;
+package entities;
 
 public class Product {
     private String name;
@@ -28,16 +28,8 @@ public class Product {
         this.price = price;
     }
 
-    public static String staticUpperCaseName(Product p) {
-        return p.getName().toUpperCase();
-    }
-
-    public String UpperCaseName() {
-        return name.toUpperCase();
-    }
-
     @Override
     public String toString() {
-        return name + ", " + String.format("%.2f", price);
+        return name + ", " + price;
     }
 }

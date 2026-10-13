@@ -29,7 +29,7 @@ public class App {
         // -----------------------------------------
         // list.removeIf(Product::staticProductPredicate);
 
-        // 3.Reference method com método estático
+        // 3.Reference method com método Não estático
         // -----------------------------------------
         // list.removeIf(Product::nonStaticProductPredicate);
 
