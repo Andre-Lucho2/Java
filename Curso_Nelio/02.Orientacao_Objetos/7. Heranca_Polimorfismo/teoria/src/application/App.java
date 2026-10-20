@@ -10,7 +10,7 @@ import entities.SavingsAccount;
 public class App {
     public static void main(String[] args) throws Exception {
         // HERANÇA
-        // --------------
+        // ---------------
 
         // Account account = new Account(102, "ElLoko", 2000.00);
         // Classe abstrata
